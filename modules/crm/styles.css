@@ -1,0 +1,118 @@
+/* ========================================
+   Kanban Board
+   ======================================== */
+#kanban-board {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+.kanban-column {
+    background: var(--card-bg);
+    border-radius: 12px;
+    border: 1px solid var(--color-border);
+    padding: 1rem;
+    min-height: 500px;
+    width: 300px;
+}
+.column-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--color-border);
+}
+.column-title {
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--color-text);
+}
+.column-count {
+    background: var(--color-background);
+    color: var(--color-text-muted);
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+.column-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    min-height: 100px;
+}
+.deal-card {
+    background: white;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 1rem;
+    cursor: move;
+    transition: all 0.2s;
+}
+.deal-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+.deal-card.sortable-ghost {
+    opacity: 0.4;
+    background: var(--color-background);
+}
+.deal-title {
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 0.5rem;
+}
+.deal-value {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 0.75rem;
+}
+.deal-customer {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    margin-bottom: 0.5rem;
+}
+.deal-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--color-border);
+}
+.deal-probability {
+    background: var(--color-background);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+}
+.kanban-card {
+    position: relative;
+}
+.card-edit {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    color: var(--color-text-muted);
+    background: var(--color-background);
+    text-decoration: none;
+    opacity: 0;
+    transition: all 0.2s ease;
+}
+.kanban-card:hover .card-edit {
+    opacity: 1;
+}
+.card-edit:hover {
+    color: var(--color-primary);
+    background: rgba(67, 97, 238, 0.1);
+}
